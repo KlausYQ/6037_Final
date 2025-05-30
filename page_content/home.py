@@ -7,13 +7,13 @@ def home_page():
     left_col.markdown(
     """
     <h2>Yuqi Wang (Klaus)</h2>
-    <p>Master of Science in Marketing Candidate<br> 
+    <p>**Master of Science in Marketing**<br> 
     The Chinese University of Hong Kong, Business School<br>
     <br>
-    Bachelor of Economics, International Economics & Trade<br>
+    **Bachelor of Economics**, International Economics & Trade<br>
     Shanghai University, SILC Business School<br>
     <br>
-    Bachelor of Business, International Business<br>
+   **Bachelor of Business**, International Business<br>
     University of Technology Sydney, SILC Business School<br>
     <br>
     Email: <a href="mailto:klausyq@163.com">klausyq@163.com</a><br>
