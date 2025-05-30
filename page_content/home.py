@@ -56,12 +56,12 @@ def home_page():
     st.markdown(
     """
     ### Skills
-    - Finance & Investment: REITs, IPO due diligence, bond issuance support, financial modeling
-    - Research & Analysis: Policy interpretation, market trend analysis, report writing
-    - Marketing & Strategy: Business insight, stakeholder communication, promotional material creation
-    - Tools: Microsoft Office (Word, Excel, PowerPoint), Wind, iFind, Stata, Scopus, Scival, Python, R
-    - Languages: Mandarin (Native), English (Professional Working Proficiency, IELTS 7.0, GMAT 675)
-    - Certifications: CFA Level I, Securities & Banking Professional Qualification Certificate, Junior International Trade Specialist
+    - **Finance & Investment:** REITs, IPO due diligence, bond issuance support, financial modeling
+    - **Research & Analysis:** Policy interpretation, market trend analysis, report writing
+    - **Marketing & Strategy:** Business insight, stakeholder communication, promotional material creation
+    - **Tools:** Microsoft Office (Word, Excel, PowerPoint), Wind, iFind, Stata, Scopus, Scival, Python, R
+    - **Languages:** Mandarin (Native), English (Professional Working Proficiency, IELTS 7.0, GMAT 675)
+    - **Certifications:** CFA Level I, Securities & Banking Professional Qualification Certificate, Junior International Trade Specialist
     """
 )
 
