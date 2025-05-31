@@ -99,13 +99,13 @@ def experience_page():
     with col1:
         st.markdown("""
         ### Technical Skills
-        - **Programming Languages:** Python, R, SQL, Stata
-        - **Marketing Analytics:** A/B Testing, Sentiment Analysis, Segmentation
-        - **Data Processing:** Pandas, NumPy, tidyverse
-        - **Visualization:** ggplot2, Tableau, PowerBI
-        - **Statistical Modeling:** Regression, Hypothesis Testing, ANOVA
-        - **Tools:** Excel (VBA), SPSS, LaTeX
+        - **Languages & Tools:** Python, R, SQL, Stata, Excel (VBA), SPSS
+        - **Data Science Methods:** Regression, ANOVA, Hypothesis Testing, A/B Testing, Clustering
+        - **Marketing Analytics:** Sentiment Analysis, Topic Modeling, UGC Mining, KOL Mapping
+        - **Data Wrangling & Processing:** pandas, NumPy, tidyverse, openpyxl
+        - **Visualization Tools:** Tableau, Power BI, ggplot2, matplotlib
         """)
+
 
     with col2:
         st.markdown("""
