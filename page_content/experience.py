@@ -80,7 +80,7 @@ def experience_page():
             try:
                 with open(project["file_path"], "rb") as file:
                     st.download_button(
-                        label="📄 Download Project Report",
+                        label="📄 Download Project Report (PDF)",
                         data=file,
                         file_name=project["file_name"],
                         mime="application/pdf"
