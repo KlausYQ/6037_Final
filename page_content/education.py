@@ -1,11 +1,11 @@
 import streamlit as st
 import os
+import base64
 
 def education_page():
     # 自定义页签样式
     st.markdown("""
     <style>
-    /* Tabs 基本样式 */
     div[data-testid="stTabs"] button {
         font-size: 18px !important;
         font-weight: 600 !important;
@@ -14,13 +14,11 @@ def education_page():
         border-radius: 8px !important;
     }
 
-    /* 鼠标悬停时的触感效果 */
     div[data-testid="stTabs"] button:hover {
         background-color: rgba(0, 0, 0, 0.05) !important;
         transform: scale(1.03);
     }
 
-    /* 当前激活页签样式 */
     div[data-testid="stTabs"] button[aria-selected="true"] {
         background-color: #e4dcc5 !important;
         color: #2c2c2c !important;
@@ -33,33 +31,51 @@ def education_page():
 
     tab1, tab2, tab3 = st.tabs(["Education", "Certifications", "Academic Projects"])
 
-    # Tab 1: Education
+    # 加载三个校徽
+    def get_base64_logo(img_path):
+        with open(img_path, "rb") as f:
+            return base64.b64encode(f.read()).decode()
+
+    logo_cuhk = get_base64_logo("static/images/cuhk.jpg")
+    logo_shu = get_base64_logo("static/images/shu.png")
+    logo_uts = get_base64_logo("static/images/uts.png")
+
     with tab1:
         st.subheader("Academic Background")
-        st.markdown("""
+        st.markdown(f"""
         ### Master of Science in Marketing  
-        **The Chinese University of Hong Kong, Business School** | *August 2024 - November 2025*
+        <div style='display: flex; align-items: center;'>
+            <strong>The Chinese University of Hong Kong, Business School</strong>  
+            <img src='data:image/png;base64,{logo_cuhk}' width='22' style='margin-left: 10px;'/>
+        </div>  
+        *August 2024 - November 2025*
 
         - Currently enrolled in the MSc in Marketing program  
         - Relevant Coursework: Big Data Strategy (A), Digital Marketing (A-), Business Negotiation (A-), Marketing Management (A-)
 
         ### Bachelor of Economics, International Economics & Trade  
-        **Shanghai University, SILC Business School** | *September 2018 – July 2022*
+        <div style='display: flex; align-items: center;'>
+            <strong>Shanghai University, SILC Business School</strong>  
+            <img src='data:image/png;base64,{logo_shu}' width='22' style='margin-left: 10px;'/>
+        </div>  
+        *September 2018 – July 2022*
 
         - GPA: 3.25/4.0  
         - Relevant Coursework: Econometrics (98), International Trade Lab (98), Monetary Banking (97), Management Accounting (97)
 
         ### Bachelor of Business, International Business  
-        **University of Technology Sydney, SILC Business School** | *August 2020 – May 2022*
+        <div style='display: flex; align-items: center;'>
+            <strong>University of Technology Sydney, SILC Business School</strong>  
+            <img src='data:image/png;base64,{logo_uts}' width='22' style='margin-left: 10px;'/>
+        </div>  
+        *August 2020 – May 2022*
 
         - GPA: 5.38/7.0  
         - Relevant Coursework: International Financial Management (3.7), Global Operations & Supply Chain Management (3.7), Global Business Environment (3.7)
-        """)
+        """, unsafe_allow_html=True)
 
-    # Tab 2: Certifications
     with tab2:
         st.subheader("Certifications")
-
         cert1, cert2, cert3, cert4 = st.columns(4)
 
         with cert1:
@@ -102,10 +118,8 @@ def education_page():
                 with open("static/docs/banking_cert.pdf", "rb") as pdf_file:
                     st.download_button("📄 Download", pdf_file, file_name="banking_cert.pdf", mime="application/pdf")
 
-    # Tab 3: Projects
     with tab3:
         st.subheader("Academic Projects")
-
         st.markdown("""
         ### Graduation Thesis: Impact of Stock Market Liberalisation on Cash Dividend Policy  
         **Shanghai-Hong Kong & Shenzhen-Hong Kong Stock Connect** | *Dec 2021 – May 2022*  
