@@ -18,7 +18,7 @@ def home_page():
     white-space: nowrap;
     overflow: hidden;
     width: 0;
-    animation: typing 3s steps(30, end) forwards;
+    animation: typing 2.5s steps(3000, end) forwards;
     text-align: center;
     margin: 0 auto 1.5rem auto;
     max-width: 100%;
@@ -46,7 +46,7 @@ def home_page():
     display: none;
     text-align: center;
     font-family: 'Rubik', sans-serif;
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 800;
     color: #7B5131;
     margin-bottom: 1.5rem;
