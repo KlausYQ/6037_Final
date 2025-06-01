@@ -98,10 +98,11 @@ def experience_page():
 <div style='font-size: 20px; font-weight: 700; margin-bottom: 0.5rem;'>
     {project['title']}
 </div>
-<div><strong>Description:</strong> <span>{project['description']}</span></div>
-<div><strong>Skills Used:</strong> <span>{', '.join(project['skills'])}</span></div>
-<div><strong>Outcome:</strong> <span>{project['outcome']}</span></div>
+<p><strong>Description:</strong> {project['description']}</p>
+<p><strong>Skills Used:</strong> {', '.join(project['skills'])}</p>
+<p><strong>Outcome:</strong> {project['outcome']}</p>
 """, unsafe_allow_html=True)
+
 
 
                 try:
