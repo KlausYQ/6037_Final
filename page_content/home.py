@@ -4,12 +4,12 @@ from PIL import Image
 import os
 
 def home_page():
-    # 动画标题（桌面端用 CSS，移动端用 JS）
+    # 打字动画 + 移动端静态标题
     st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
 
-/* 桌面端：打字机动画 */
+/* 桌面端：打字动画标题 */
 .typing-desktop {
     font-family: 'Rubik', sans-serif;
     font-size: 50px;
@@ -25,24 +25,24 @@ def home_page():
     display: block;
 }
 
-/* 桌面端动画帧 */
+/* 打字动画帧 */
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
 }
 
-/* 移动端：隐藏桌面动画，显示 JS 容器 */
+/* 移动端：隐藏动画标题，显示静态标题 */
 @media screen and (max-width: 768px) {
     .typing-desktop {
         display: none;
     }
-    #mobile-typing {
+    .static-mobile {
         display: block !important;
     }
 }
 
-/* 默认隐藏移动端动画容器（桌面不显示） */
-#mobile-typing {
+/* 默认隐藏静态标题 */
+.static-mobile {
     display: none;
     text-align: center;
     font-family: 'Rubik', sans-serif;
@@ -55,25 +55,11 @@ def home_page():
 }
 </style>
 
-<!-- 桌面端标题 -->
+<!-- 桌面端：打字动画 -->
 <div class="typing-desktop">Welcome to Klaus's Homepage</div>
 
-<!-- 移动端 JS 动画 -->
-<div id="mobile-typing"></div>
-<script>
-const text = "Welcome to Klaus's Homepage";
-let i = 0;
-function typeWriter() {
-    if (i < text.length) {
-        document.getElementById("mobile-typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 60);
-    }
-}
-if (window.innerWidth <= 768) {
-    typeWriter();
-}
-</script>
+<!-- 移动端：静态标题 -->
+<div class="static-mobile">Welcome to Klaus's Homepage</div>
 """, unsafe_allow_html=True)
 
     # 页面左右布局
