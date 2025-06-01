@@ -9,7 +9,7 @@ def experience_page():
     div[data-testid="stTabs"] button {
         font-size: 20px !important;
         font-weight: 700 !important;
-        padding: 0.75rem 4rem !important;
+        padding: 0.75rem 2.5rem !important;
         transition: all 0.3s ease;
         border-radius: 8px !important;
     }
