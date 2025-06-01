@@ -4,12 +4,17 @@ from PIL import Image
 import os
 
 def home_page():
-    # 页首标题样式：保留打字动画，去掉闪动光标
+    # 打字动画（无闪动竖线，移动端也保留动画）
     st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
 
-/* 桌面端打字机动画（无闪动光标） */
+.typing-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1.5rem;
+}
+
 .typing-container {
     font-family: 'Rubik', sans-serif;
     font-size: 50px;
@@ -18,37 +23,34 @@ def home_page():
     white-space: nowrap;
     overflow: hidden;
     width: 0;
-    animation: typing 3s steps(5000, end) forwards;
-    margin: 0 auto 1.5rem auto;
+    animation: typing 3s steps(30, end) forwards;
+    margin: 0 auto;
     text-align: center;
-    max-width: 100%;
 }
 
-/* 动画帧 */
+/* 动画关键帧 */
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
 }
 
-/* 移动端：关闭动画，缩小字体，换行 */
+/* 移动端字体缩放，但保留动画 */
 @media screen and (max-width: 768px) {
     .typing-container {
-        font-size: 28px;
-        white-space: normal;
-        overflow: visible;
-        width: auto;
-        animation: none;
+        font-size: 32px;
     }
 }
 </style>
 
-<div class="typing-container">Welcome to Klaus's Homepage</div>
+<div class="typing-wrapper">
+    <div class="typing-container">Welcome to Klaus's Homepage</div>
+</div>
 """, unsafe_allow_html=True)
 
     # 页面左右布局
     left_col, right_col = st.columns([3, 4])
 
-    # 左列内容：个人信息
+    # 左列：个人信息
     left_col.markdown(
         """
         <h2>Yuqi Wang (Klaus)</h2>
@@ -68,7 +70,7 @@ def home_page():
         unsafe_allow_html=True
     )
 
-    # 右列内容：头像居中显示
+    # 右列：头像居中显示
     image_path = os.path.join("static", "images", "klaus.jpg")
     if os.path.exists(image_path):
         with right_col:
