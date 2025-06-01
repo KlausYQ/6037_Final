@@ -7,9 +7,9 @@ def experience_page():
     <style>
     /* Tabs 样式 */
     div[data-testid="stTabs"] button {
-        font-size: 50px !important;
+        font-size: 20px !important;
         font-weight: 700 !important;
-        padding: 0.75rem 1.5rem !important;
+        padding: 0.75rem 4rem !important;
         transition: all 0.3s ease;
         border-radius: 8px !important;
     }
