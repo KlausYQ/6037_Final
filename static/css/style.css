@@ -8,10 +8,11 @@ html, body, [class*="st-"] {
 }
 
 /* =================== 主页面背景（浅卡其） =================== */
-.main {
+[data-testid="stAppViewContainer"] {
+    background-color: #f5f0e6 !important;
     padding: 2rem;
-    background-color: #f5f0e6;  /* 高级感浅卡其色 */
 }
+
 
 /* =================== 标题文字颜色 =================== */
 h1, h2, h3, h4 {
