@@ -12,7 +12,6 @@ def experience_page():
         padding: 0.75rem 1.5rem !important;
         transition: all 0.3s ease;
         border-radius: 8px !important;
-        color: #2c2c2c !important;
     }
 
     div[data-testid="stTabs"] button:hover {
