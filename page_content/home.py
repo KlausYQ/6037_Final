@@ -4,35 +4,45 @@ from PIL import Image
 import os
 
 def home_page():
-    # 页面动画与样式设置（移动端兼容 + 渐入动画）
+    # 标题样式：保留桌面端打字动画，移动端关闭动画 + 换行 + 缩小字体
     st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
 
-/* 标题渐入动画 */
+/* 桌面端打字机动画 */
 .typing-container {
     font-family: 'Rubik', sans-serif;
     font-size: 50px;
     font-weight: 800;
     color: #7B5131;
-    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #7B5131;
+    width: 0;
+    animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
     margin: 0 auto 1.5rem auto;
-    animation: fadeIn 1s ease-in;
-    word-wrap: break-word;
-    word-break: break-word;
-    padding: 0 10px;
+    text-align: center;
+    max-width: 100%;
 }
 
-/* 动画定义 */
-@keyframes fadeIn {
-    from { opacity: 0 }
-    to { opacity: 1 }
+/* 动画关键帧 */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+@keyframes blink {
+    50% { border-color: transparent }
 }
 
-/* 移动端适配 */
+/* 移动端样式：关闭动画，支持换行 */
 @media screen and (max-width: 768px) {
     .typing-container {
         font-size: 28px;
+        white-space: normal;
+        overflow: visible;
+        width: auto;
+        border: none;
+        animation: none;
     }
 }
 </style>
@@ -43,7 +53,7 @@ def home_page():
     # 页面左右布局
     left_col, right_col = st.columns([3, 4])
 
-    # 左列个人信息
+    # 左列：个人信息
     left_col.markdown(
         """
         <h2>Yuqi Wang (Klaus)</h2>
@@ -63,7 +73,7 @@ def home_page():
         unsafe_allow_html=True
     )
 
-    # 右列头像居中显示
+    # 右列：头像居中显示
     image_path = os.path.join("static", "images", "klaus.jpg")
     if os.path.exists(image_path):
         with right_col:
@@ -84,7 +94,7 @@ def home_page():
 
     st.markdown("---")
 
-    # About Me 部分
+    # About Me 区块
     st.markdown(
         """
         ### About Me
@@ -96,7 +106,7 @@ def home_page():
         """
     )
 
-    # Skills 部分
+    # Skills 区块
     st.markdown(
         """
         ### Skills
