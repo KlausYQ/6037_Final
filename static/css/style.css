@@ -8,26 +8,6 @@ html, body, [class*="st-"] {
     font-weight: 600;
 }
 
-/* 主页面背景（仅 light 模式） */
-body.theme-light .block-container {
-    background-color: #f5f0e6 !important;
-}
-
-/* Dark 模式下字体颜色 */
-body.theme-dark .block-container,
-body.theme-dark .stText,
-body.theme-dark .stMarkdown,
-body.theme-dark .stButton>button,
-body.theme-dark .stDataFrame,
-body.theme-dark .stRadio,
-body.theme-dark .stSelectbox,
-body.theme-dark .stTextInput,
-body.theme-dark .stTextarea,
-body.theme-dark section[data-testid="stSidebar"],
-body.theme-dark section[data-testid="stSidebar"] * {
-    color: #cccccc !important;
-}
-
 
 /* =================== 主页面背景（浅卡其） =================== */
 [data-testid="stAppViewContainer"] {
