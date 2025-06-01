@@ -4,7 +4,7 @@ from PIL import Image
 import os
 
 def home_page():
-    # 打字机动画标题（无闪烁光标 + 更好看的字体）
+    # 页面动画与样式设置
     st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
@@ -24,21 +24,15 @@ def home_page():
     from { width: 0 }
     to { width: 100% }
 }
-
-/* 居中右侧图片 */
-.center-image {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
 </style>
 
 <div class="typing-container">Welcome to Klaus's Homepage</div>
 """, unsafe_allow_html=True)
 
+    # 页面左右布局
     left_col, right_col = st.columns([3, 4])
 
-    # 左列内容
+    # 左列个人信息
     left_col.markdown(
         """
         <h2>Yuqi Wang (Klaus)</h2>
@@ -58,33 +52,28 @@ def home_page():
         unsafe_allow_html=True
     )
 
-    # 右列居中显示照片
+    # 右列头像居中显示
     image_path = os.path.join("static", "images", "klaus.jpg")
     if os.path.exists(image_path):
-        image = Image.open(image_path)
-        width, height = image.size
-        new_width = 300
-        new_height = int(height * (new_width / width))
-        image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
-
         with right_col:
-            if os.path.exists(image_path):
-                st.markdown(
-            f"""
-            <div style="display: flex; justify-content: center;">
-                <img src="data:image/png;base64,{base64.b64encode(open(image_path, "rb").read()).decode()}" 
-                     width="300" style="border-radius: 10px;" />
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-            else:
-        right_col.warning("Profile image not found")
+            with open(image_path, "rb") as img_file:
+                img_base64 = base64.b64encode(img_file.read()).decode()
 
+            st.markdown(
+                f"""
+                <div style="display: flex; justify-content: center; margin-top: 10px;">
+                    <img src="data:image/png;base64,{img_base64}" 
+                         width="300" style="border-radius: 10px;" />
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+    else:
+        right_col.warning("Profile image not found")
 
     st.markdown("---")
 
-    # About Me
+    # About Me 部分
     st.markdown(
         """
         ### About Me
@@ -96,7 +85,7 @@ def home_page():
         """
     )
 
-    # Skills
+    # Skills 部分
     st.markdown(
         """
         ### Skills
