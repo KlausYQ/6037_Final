@@ -96,7 +96,7 @@ def experience_page():
         for i, project in enumerate(projects):
             with st.expander(f"Project {i+1}", expanded=i == 0):
                 st.markdown(f"""
-                <div style='font-size: 20px; font-weight: 700; color: #2c2c2c; margin-bottom: 0.5rem;'>
+                <div style='font-size: 20px; font-weight: 700; margin-bottom: 0.5rem;'>
                     {project['title']}
                 </div>
                 <div><strong>Description:</strong> {project['description']}</div>
