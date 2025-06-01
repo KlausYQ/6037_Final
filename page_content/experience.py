@@ -29,7 +29,6 @@ def experience_page():
         font-size: 20px;
         font-weight: 700;
         margin-bottom: 0.5rem;
-        color: #2c2c2c;
     }
     </style>
     """, unsafe_allow_html=True)
