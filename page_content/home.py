@@ -28,7 +28,7 @@ def home_page():
 <div class="typing-container">Welcome to Klaus's Homepage</div>
 """, unsafe_allow_html=True)
 
-    left_col, right_col = st.columns([2,2])
+    left_col, right_col = st.columns([4,2])
     left_col.markdown(
     """
     <h2>Yuqi Wang (Klaus)</h2>
