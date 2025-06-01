@@ -53,7 +53,7 @@ def home_page():
     if os.path.exists(image_path):
         image = Image.open(image_path)
         width, height = image.size
-        new_width = 400
+        new_width = 300
         new_height = int(height * (new_width / width))
         image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
         right_col.image(image, output_format="PNG")
