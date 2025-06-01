@@ -1,3 +1,4 @@
+import base64
 import streamlit as st
 from PIL import Image
 import os
@@ -67,12 +68,19 @@ def home_page():
         image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
 
         with right_col:
-            st.markdown('<div class="center-image">', unsafe_allow_html=True)
-            st.image(image, output_format="PNG", use_container_width=False)
-            st.markdown('</div>', unsafe_allow_html=True)
-
-    else:
+            if os.path.exists(image_path):
+                st.markdown(
+            f"""
+            <div style="display: flex; justify-content: center;">
+                <img src="data:image/png;base64,{base64.b64encode(open(image_path, "rb").read()).decode()}" 
+                     width="300" style="border-radius: 10px;" />
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+            else:
         right_col.warning("Profile image not found")
+
 
     st.markdown("---")
 
