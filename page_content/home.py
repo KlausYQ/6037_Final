@@ -4,33 +4,33 @@ from PIL import Image
 import os
 
 def home_page():
-    # 顶部标题动画样式：打字效果 + 自动换行 + 无闪动光标
+    # 打字动画（保留原样，去除闪动竖线）
     st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
 
+/* 打字机标题样式（无闪动光标） */
 .typing-container {
     font-family: 'Rubik', sans-serif;
     font-size: 50px;
     font-weight: 800;
     color: #7B5131;
+    white-space: nowrap;
     overflow: hidden;
-    display: inline-block;
-    white-space: normal;
-    word-wrap: break-word;
-    width: 0ch;
-    animation: typing 3s steps(32, end) forwards;
+    width: 0;
+    animation: typing 3s steps(30, end) forwards;
+    margin: 0 auto 1.5rem auto;
     text-align: center;
     max-width: 100%;
-    margin: 0 auto 1.5rem auto;
 }
 
+/* 打字动画帧 */
 @keyframes typing {
-    from { width: 0ch }
-    to { width: 32ch }
+    from { width: 0 }
+    to { width: 100% }
 }
 
-/* 移动端缩小字体，但保留动画与换行 */
+/* 移动端适配：字体缩小，但不打断动画 */
 @media screen and (max-width: 768px) {
     .typing-container {
         font-size: 32px;
@@ -44,7 +44,7 @@ def home_page():
     # 页面左右布局
     left_col, right_col = st.columns([3, 4])
 
-    # 左列内容：个人信息
+    # 左列：个人信息
     left_col.markdown(
         """
         <h2>Yuqi Wang (Klaus)</h2>
@@ -64,7 +64,7 @@ def home_page():
         unsafe_allow_html=True
     )
 
-    # 右列内容：头像居中显示
+    # 右列：头像居中显示
     image_path = os.path.join("static", "images", "klaus.jpg")
     if os.path.exists(image_path):
         with right_col:
