@@ -4,38 +4,35 @@ from PIL import Image
 import os
 
 def home_page():
-    # 页面动画与样式设置（移动端兼容）
+    # 页面动画与样式设置（移动端兼容 + 渐入动画）
     st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
 
-/* 桌面端打字动画 */
+/* 标题渐入动画 */
 .typing-container {
     font-family: 'Rubik', sans-serif;
     font-size: 50px;
     font-weight: 800;
     color: #7B5131;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    animation: typing 3s steps(30, end) forwards;
-    margin: 0 auto 1.5rem auto;
     text-align: center;
+    margin: 0 auto 1.5rem auto;
+    animation: fadeIn 1s ease-in;
+    word-wrap: break-word;
+    word-break: break-word;
+    padding: 0 10px;
 }
 
-/* 动画关键帧 */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+/* 动画定义 */
+@keyframes fadeIn {
+    from { opacity: 0 }
+    to { opacity: 1 }
 }
 
-/* 移动端样式：关闭动画，自动换行 */
+/* 移动端适配 */
 @media screen and (max-width: 768px) {
     .typing-container {
         font-size: 28px;
-        white-space: normal;
-        animation: none;
-        width: auto;
     }
 }
 </style>
