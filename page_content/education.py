@@ -35,7 +35,7 @@ def education_page():
         with open(path, "rb") as f:
             return base64.b64encode(f.read()).decode()
 
-    logo_cuhk = get_base64_logo("static/images/cuhk.jpg")
+    logo_cuhk = get_base64_logo("static/images/cuhk.png")
     logo_shu = get_base64_logo("static/images/shu.png")
     logo_uts = get_base64_logo("static/images/uts.png")
 
