@@ -43,30 +43,30 @@ def education_page():
     with tab1:
         st.subheader("Academic Background")
         st.markdown(f"""
-        ### The Chinese University of Hong Kong
-        <div style='display: flex; align-items: center;'>
-            <strong>Master of Science in Marketing, Business School</strong>  
-            <img src='data:image/png;base64,{logo_cuhk}' width='22' style='margin-left: 10px;'/>
+        ### Master of Science in Marketing  
+        <div style='display: flex; align-items: center; gap: 10px;'>
+            <span><strong>The Chinese University of Hong Kong, Business School</strong></span>
+            <img src='data:image/png;base64,{logo_cuhk}' width='22'/>
         </div>  
         *August 2024 - November 2025*
 
         - Currently enrolled in the MSc in Marketing program  
         - Relevant Coursework: Big Data Strategy (A), Digital Marketing (A-), Business Negotiation (A-), Marketing Management (A-)
 
-        ### Shanghai University  
-        <div style='display: flex; align-items: center;'>
-            <strong>Bachelor of Economics, International Economics & Trade, SILC Business School</strong>  
-            <img src='data:image/png;base64,{logo_shu}' width='22' style='margin-left: 10px;'/>
+        ### Bachelor of Economics, International Economics & Trade  
+        <div style='display: flex; align-items: center; gap: 10px;'>
+            <span><strong>Shanghai University, SILC Business School</strong></span>
+            <img src='data:image/png;base64,{logo_shu}' width='22'/>
         </div>  
         *September 2018 – July 2022*
 
         - GPA: 3.25/4.0  
         - Relevant Coursework: Econometrics (98), International Trade Lab (98), Monetary Banking (97), Management Accounting (97)
 
-        ### University of Technology Sydney
-        <div style='display: flex; align-items: center;'>
-            <strong>Bachelor of Business with Credit, SILC Business School</strong>  
-            <img src='data:image/png;base64,{logo_uts}' width='22' style='margin-left: 10px;'/>
+        ### Bachelor of Business, International Business  
+        <div style='display: flex; align-items: center; gap: 10px;'>
+            <span><strong>University of Technology Sydney, SILC Business School</strong></span>
+            <img src='data:image/png;base64,{logo_uts}' width='22'/>
         </div>  
         *August 2020 – May 2022*
 
