@@ -56,7 +56,7 @@ def education_page():
         - GPA: 3.25/4.0  
         - Relevant Coursework: Econometrics (98), International Trade Lab (98), Monetary Banking (97), Management Accounting (97)
 
-        ### University of Technology Sydney <img src='data:image/png;base64,{logo_uts}' width='110' style='margin-left:8px; vertical-align:middle;'/>  
+        ### University of Technology Sydney <img src='data:image/png;base64,{logo_uts}' width='100' style='margin-left:8px; vertical-align:middle;'/>  
         **Bachelor of Business with Credit, SILC Business School**  
         *August 2020 – May 2022*
 
