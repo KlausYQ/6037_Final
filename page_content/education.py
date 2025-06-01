@@ -43,9 +43,9 @@ def education_page():
     with tab1:
         st.subheader("Academic Background")
         st.markdown(f"""
-        ### Master of Science in Marketing  
+        ### The Chinese University of Hong Kong
         <div style='display: flex; align-items: center;'>
-            <strong>The Chinese University of Hong Kong, Business School</strong>  
+            <strong>Master of Science in Marketing, Business School</strong>  
             <img src='data:image/png;base64,{logo_cuhk}' width='22' style='margin-left: 10px;'/>
         </div>  
         *August 2024 - November 2025*
@@ -53,9 +53,9 @@ def education_page():
         - Currently enrolled in the MSc in Marketing program  
         - Relevant Coursework: Big Data Strategy (A), Digital Marketing (A-), Business Negotiation (A-), Marketing Management (A-)
 
-        ### Bachelor of Economics, International Economics & Trade  
+        ### Shanghai University  
         <div style='display: flex; align-items: center;'>
-            <strong>Shanghai University, SILC Business School</strong>  
+            <strong>Bachelor of Economics, International Economics & Trade, SILC Business School</strong>  
             <img src='data:image/png;base64,{logo_shu}' width='22' style='margin-left: 10px;'/>
         </div>  
         *September 2018 – July 2022*
@@ -63,9 +63,9 @@ def education_page():
         - GPA: 3.25/4.0  
         - Relevant Coursework: Econometrics (98), International Trade Lab (98), Monetary Banking (97), Management Accounting (97)
 
-        ### Bachelor of Business, International Business  
+        ### University of Technology Sydney
         <div style='display: flex; align-items: center;'>
-            <strong>University of Technology Sydney, SILC Business School</strong>  
+            <strong>Bachelor of Business with Credit, SILC Business School</strong>  
             <img src='data:image/png;base64,{logo_uts}' width='22' style='margin-left: 10px;'/>
         </div>  
         *August 2020 – May 2022*
