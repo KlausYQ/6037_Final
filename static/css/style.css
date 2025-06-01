@@ -14,8 +14,6 @@ html, body, [class*="st-"] {
 }
 
 
-
-
 /* =================== 标题文字颜色 =================== */
 h1, h2, h3, h4 {
     color: #2c2c2c;  /* 深灰黑，适合浅卡其背景 */
@@ -107,6 +105,10 @@ button.css-1emrehy:hover {
     background-color: #f5f5f5 !important;
     color: #2c2c2c !important;
     border-color: #bbb !important;
+}
+/* =================== Dark 模式下的全局文字颜色设置 =================== */
+body.theme-dark, body.theme-dark [class] {
+    color: #cccccc !important;
 }
 
 
