@@ -106,8 +106,16 @@ button.css-1emrehy:hover {
     color: #2c2c2c !important;
     border-color: #bbb !important;
 }
-/* =================== Dark 模式下的全局文字颜色设置 =================== */
-body.theme-dark, body.theme-dark [class] {
+/* ===== 全局 dark 模式下文字浅灰色设置 ===== */
+body.theme-dark, 
+body.theme-dark * {
+    color: #cccccc !important;
+    border-color: #555 !important; /* 避免表单元素边框也太亮 */
+}
+
+/* 适配 sidebar 的 dark 模式字体颜色 */
+body.theme-dark section[data-testid="stSidebar"] *,
+body.theme-dark .st-emotion-cache-1v0mbdj {
     color: #cccccc !important;
 }
 
