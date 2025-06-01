@@ -95,13 +95,14 @@ def experience_page():
         for i, project in enumerate(projects):
             with st.expander(f"Project {i+1}", expanded=i == 0):
                 st.markdown(f"""
-                <div style='font-size: 20px; font-weight: 700; margin-bottom: 0.5rem;'>
-                    {project['title']}
-                </div>
-                <div><strong>Description:</strong> {project['description']}</div>
-                <div><strong>Skills Used:</strong> {', '.join(project['skills'])}</div>
-                <div><strong>Outcome:</strong> {project['outcome']}</div>
-                """, unsafe_allow_html=True)
+<div style='font-size: 20px; font-weight: 700; margin-bottom: 0.5rem;'>
+    {project['title']}
+</div>
+<div><strong>Description:</strong> <span>{project['description']}</span></div>
+<div><strong>Skills Used:</strong> <span>{', '.join(project['skills'])}</span></div>
+<div><strong>Outcome:</strong> <span>{project['outcome']}</span></div>
+""", unsafe_allow_html=True)
+
 
                 try:
                     with open(project["file_path"], "rb") as file:
