@@ -63,7 +63,7 @@ def home_page():
                 f"""
                 <div style="display: flex; justify-content: center; margin-top: 10px;">
                     <img src="data:image/png;base64,{img_base64}" 
-                         width="300" style="border-radius: 10px;" />
+                         width="350" style="border-radius: 10px;" />
                 </div>
                 """,
                 unsafe_allow_html=True
