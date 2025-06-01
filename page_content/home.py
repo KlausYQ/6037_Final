@@ -4,13 +4,13 @@ from PIL import Image
 import os
 
 def home_page():
-    # 打字动画（保留原样，去除闪动竖线）
+    # 动画标题（桌面端用 CSS，移动端用 JS）
     st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
 
-/* 打字机标题样式（无闪动光标） */
-.typing-container {
+/* 桌面端：打字机动画 */
+.typing-desktop {
     font-family: 'Rubik', sans-serif;
     font-size: 50px;
     font-weight: 800;
@@ -19,26 +19,61 @@ def home_page():
     overflow: hidden;
     width: 0;
     animation: typing 3s steps(30, end) forwards;
-    margin: 0 auto 1.5rem auto;
     text-align: center;
+    margin: 0 auto 1.5rem auto;
     max-width: 100%;
+    display: block;
 }
 
-/* 打字动画帧 */
+/* 桌面端动画帧 */
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
 }
 
-/* 移动端适配：字体缩小，但不打断动画 */
+/* 移动端：隐藏桌面动画，显示 JS 容器 */
 @media screen and (max-width: 768px) {
-    .typing-container {
-        font-size: 32px;
+    .typing-desktop {
+        display: none;
     }
+    #mobile-typing {
+        display: block !important;
+    }
+}
+
+/* 默认隐藏移动端动画容器（桌面不显示） */
+#mobile-typing {
+    display: none;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #7B5131;
+    margin-bottom: 1.5rem;
+    padding: 0 10px;
+    word-wrap: break-word;
 }
 </style>
 
-<div class="typing-container">Welcome to Klaus's Homepage</div>
+<!-- 桌面端标题 -->
+<div class="typing-desktop">Welcome to Klaus's Homepage</div>
+
+<!-- 移动端 JS 动画 -->
+<div id="mobile-typing"></div>
+<script>
+const text = "Welcome to Klaus's Homepage";
+let i = 0;
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("mobile-typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 60);
+    }
+}
+if (window.innerWidth <= 768) {
+    typeWriter();
+}
+</script>
 """, unsafe_allow_html=True)
 
     # 页面左右布局
