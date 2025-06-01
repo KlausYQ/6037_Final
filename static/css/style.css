@@ -8,10 +8,12 @@ html, body, [class*="st-"] {
 }
 
 /* =================== 主页面背景（浅卡其） =================== */
-[data-testid="stAppViewContainer"] {
-    background-color: #f5f0e6 !important;
+/* 适配新版 Streamlit 主区域背景色 */
+div.block-container {
     padding: 2rem;
+    background-color: #f5f0e6 !important;  /* 浅卡其色 */
 }
+
 
 
 /* =================== 标题文字颜色 =================== */
