@@ -31,7 +31,7 @@ def education_page():
 
     tab1, tab2, tab3 = st.tabs(["Education", "Certifications", "Academic Projects"])
 
-    # 加载三个校徽
+    # 加载校徽图片并转为 base64
     def get_base64_logo(img_path):
         with open(img_path, "rb") as f:
             return base64.b64encode(f.read()).decode()
@@ -43,31 +43,22 @@ def education_page():
     with tab1:
         st.subheader("Academic Background")
         st.markdown(f"""
-        ### Master of Science in Marketing  
-        <div style='display: flex; align-items: center; gap: 10px;'>
-            <span><strong>The Chinese University of Hong Kong, Business School</strong></span>
-            <img src='data:image/png;base64,{logo_cuhk}' width='22'/>
-        </div>  
+        ### The Chinese University of Hong Kong  
+        **Master of Science in Marketing, Business School** <img src='data:image/png;base64,{logo_cuhk}' width='22' style='margin-left: 8px; vertical-align: middle;'/>  
         *August 2024 - November 2025*
 
         - Currently enrolled in the MSc in Marketing program  
         - Relevant Coursework: Big Data Strategy (A), Digital Marketing (A-), Business Negotiation (A-), Marketing Management (A-)
 
-        ### Bachelor of Economics, International Economics & Trade  
-        <div style='display: flex; align-items: center; gap: 10px;'>
-            <span><strong>Shanghai University, SILC Business School</strong></span>
-            <img src='data:image/png;base64,{logo_shu}' width='22'/>
-        </div>  
+        ### Shanghai University  
+        **Bachelor of Economics, International Economics & Trade, SILC Business School** <img src='data:image/png;base64,{logo_shu}' width='22' style='margin-left: 8px; vertical-align: middle;'/>  
         *September 2018 – July 2022*
 
         - GPA: 3.25/4.0  
         - Relevant Coursework: Econometrics (98), International Trade Lab (98), Monetary Banking (97), Management Accounting (97)
 
-        ### Bachelor of Business, International Business  
-        <div style='display: flex; align-items: center; gap: 10px;'>
-            <span><strong>University of Technology Sydney, SILC Business School</strong></span>
-            <img src='data:image/png;base64,{logo_uts}' width='22'/>
-        </div>  
+        ### University of Technology Sydney  
+        **Bachelor of Business with Credit, SILC Business School** <img src='data:image/png;base64,{logo_uts}' width='22' style='margin-left: 8px; vertical-align: middle;'/>  
         *August 2020 – May 2022*
 
         - GPA: 5.38/7.0  
