@@ -9,7 +9,7 @@ def resume_page():
         with open(pdf_file_path, "rb") as pdf_file:
             PDFbyte = pdf_file.read()
 
-        st.download_button(label="Download Resume (PDF)",
+        st.download_button(label="📄 Download Resume (PDF)",
                         data=PDFbyte,
                         file_name="Yuqi_Wang_Resume.pdf",
                         mime='application/octet-stream')
