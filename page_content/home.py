@@ -46,7 +46,7 @@ def home_page():
     display: none;
     text-align: center;
     font-family: 'Rubik', sans-serif;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 800;
     color: #7B5131;
     margin-bottom: 1.5rem;
