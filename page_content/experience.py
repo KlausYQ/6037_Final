@@ -68,7 +68,7 @@ def experience_page():
         projects = [
             {
                 "title": "Customer Segmentation and Conversion Analysis for JD.com",
-                "description": "Analyzed JD.com’s high-value vs non-high-value customer behaviors to optimize marketing.",
+                "description": "Analyzed JD.com's high-value vs non-high-value customer behaviors to optimize marketing.",
                 "skills": ["R", "Data Cleaning", "Segmentation", "Funnel Analysis", "Visualization"],
                 "outcome": "Revealed behavioral differences to inform targeting strategies.",
                 "file_path": "static/docs/Project-JD.pdf",
@@ -84,7 +84,7 @@ def experience_page():
             },
             {
                 "title": "Brand Influence Analysis for Jellycat",
-                "description": "Used UGC and visual mining to reveal Jellycat’s emotional and visual resonance trends.",
+                "description": "Used UGC and visual mining to reveal Jellycat's emotional and visual resonance trends.",
                 "skills": ["Python", "UGC Analysis", "Topic Modeling"],
                 "outcome": "Provided branding suggestions for Gen Z engagement.",
                 "file_path": "static/docs/Project-Jellycat.pdf",
