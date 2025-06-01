@@ -18,7 +18,7 @@ def home_page():
     white-space: nowrap;
     overflow: hidden;
     width: 0;
-    animation: typing 3s steps(30, end) forwards;
+    animation: typing 3s steps(1000, end) forwards;
     margin: 0 auto 1.5rem auto;
     text-align: center;
     max-width: 100%;
