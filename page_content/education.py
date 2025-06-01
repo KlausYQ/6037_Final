@@ -70,7 +70,7 @@ def education_page():
             """)
             if os.path.exists("static/docs/cfa_certificate.pdf"):
                 with open("static/docs/cfa_certificate.pdf", "rb") as pdf_file:
-                    st.download_button("Download", pdf_file, file_name="cfa_certificate.pdf", mime="application/pdf")
+                    st.download_button("📄 Download", pdf_file, file_name="cfa_certificate.pdf", mime="application/pdf")
 
         with cert2:
             st.markdown("""
@@ -80,7 +80,7 @@ def education_page():
             """)
             if os.path.exists("static/docs/trade_specialist_cert.pdf"):
                 with open("static/docs/trade_specialist_cert.pdf", "rb") as pdf_file:
-                    st.download_button("Download", pdf_file, file_name="trade_specialist_cert.pdf", mime="application/pdf")
+                    st.download_button("📄 Download", pdf_file, file_name="trade_specialist_cert.pdf", mime="application/pdf")
 
         with cert3:
             st.markdown("""
@@ -90,7 +90,7 @@ def education_page():
             """)
             if os.path.exists("static/docs/securities_cert.pdf"):
                 with open("static/docs/securities_cert.pdf", "rb") as pdf_file:
-                    st.download_button("Download", pdf_file, file_name="securities_cert.pdf", mime="application/pdf")
+                    st.download_button("📄 Download", pdf_file, file_name="securities_cert.pdf", mime="application/pdf")
 
         with cert4:
             st.markdown("""
@@ -100,7 +100,7 @@ def education_page():
             """)
             if os.path.exists("static/docs/banking_cert.pdf"):
                 with open("static/docs/banking_cert.pdf", "rb") as pdf_file:
-                    st.download_button("Download", pdf_file, file_name="banking_cert.pdf", mime="application/pdf")
+                    st.download_button("📄 Download", pdf_file, file_name="banking_cert.pdf", mime="application/pdf")
 
     # Tab 3: Projects
     with tab3:
